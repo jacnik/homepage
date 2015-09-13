@@ -6,6 +6,7 @@
 !*.js
 !*.css
 !*.py
+!*.html
 
 # ...even if they are in subdirectories
 !*/
