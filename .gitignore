@@ -3,11 +3,16 @@
 
 # But not these files...
 !.gitignore
+
 !*.js
 !*.css
-!*.py
 !*.html
+
+!*.py
+
 !*.ico
+!*.png
+!*.jpg
 
 # ...even if they are in subdirectories
 !*/
