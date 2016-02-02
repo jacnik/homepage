@@ -7,9 +7,7 @@ import webapp2
 import jinja2
 
 
-
 from google.appengine.api import memcache
-
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
@@ -17,7 +15,7 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
                                variable_end_string='))',
                                autoescape = True)
 
-                               
+
 class Handler(webapp2.RequestHandler):
   def initialize(self, *a, **kw):
     super(Handler, self).initialize(*a, **kw)
@@ -30,14 +28,12 @@ class Handler(webapp2.RequestHandler):
     return t.render(params)
 
   def render(self, template, **kw):
-    self.write(self.render_str(template, **kw)) 
-
+    self.write(self.render_str(template, **kw))
 
 
 class MainHandler(Handler):
   def get(self):
     self.render('master.tmpl.html')
-
 
 
 app = webapp2.WSGIApplication([
